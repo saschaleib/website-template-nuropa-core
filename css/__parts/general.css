@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+/* Stylesheet for Nuropa 2026
+ * General styles and variables setup
+ * by Sascha Leib for GROW E.4
+ * File name: __parts/general.css
+ */
+
+/* general variables */
+:root {
+	
+	/* fonts */
+	--nu-text-fonts: arial, helvetica, sans-serif;
+	--nu-headline-fonts: Bahnschrift, "DIN Alternate", "Arial Bold", sans-serif;
+	
+	/* colours */
+	--nu-background-color: #FFF;
+	--nu-background-color-dark: #181816;
+	--nu-text-color: #00002E;
+	--nu-text-color-dark: #ADADAD;
+	--nu-focus-color: #F39811;
+	--nu-focus-color-dark: #F39811;
+	--nu-link-color: #3860ED;
+	--nu-link-color-dark: #7F85F5;
+	--nu-toolbar-background: #EEE;
+	--nu-toolbar-background-dark: #000;
+	--nu-toolbar-text: #000;
+	--nu-toolbar-text-dark: #EEE;
+	--nu-toolbar-border: #D4D4D4;
+	--nu-toolbar-border-dark: #d4d4d4;
+	--nu-toolbar-fonts: system-ui, '-apple-system', 'Segoe UI', 'Helvetica Neue', Roboto, sans-serif;
+	--nu-toolbar-fontsize: 1rem;
+
+	/* sizes */
+	--nu-content-width-desktop: 81.5rem;
+	--nu-sidebar-width-desktop: 17rem;
+}
+
+/* Root styles */
+:root {
+	font-family: var(--nu-text-fonts);
+	line-height: 1.15;
+	font-size: 16px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	overflow-x: hidden;
+	overflow-y: auto;
+	scroll-behavior: smooth;
+	background-color: var(--nu-background-color);
+}
+
+/* global focus outline: */
+a:focus, input:focus, button:focus {
+	outline: 2px solid var(--nu-focus-color);
+}
+
+/* accessibility fixes */
+.sr-only {
+	position: absolute;
+	clip: rect(0,0,0,0);
+	clip-path: rect(0px 0px 0px 0px);
+	overflow: hidden;
+	height: 1px;
+	width: 1px;
+	border: 0 none;
+	margin: -1px;
+}
+.print-only {
+	display: none;
+}
+.hide-on-screen {
+	display: none;
+}
+
+/* global link styles */
+a:link,
+a:visited {
+	color: var(--nu-link-color);
+	text-decoration: underline;
+}
+a:hover {
+	color: var(--nu-link-color);
+}
+a:focus {
+	outline: 2pt solid var(--nu-focus-color);
+	text-decoration: none;
+}
+
+/* abbr title hint only when hover is actually available: */
+@media (hover: hover) {
+	abbr[title] {
+		text-decoration: underline;
+		text-decoration-style: dashed;
+		text-decoration-color: color-mix(in lab, currentColor 50%, var(--nu-background-color) 50%);
+	}
+}
