@@ -1,2 +1,3 @@
-# website-template-nuropa-core
-A simple but extendable HTML web site template, which can be used as the basis for other implementations
+# Website Template Nuropa (core)
+
+This is a project to create an abstract website template with some advanced features. This is "work in progress" at this point.
