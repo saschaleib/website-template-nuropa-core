@@ -92,6 +92,11 @@ a:focus {
 	text-decoration: none;
 }
 
+/* form elements reset */
+button, input, textarea {
+	all: unset;
+}
+
 /* abbr title hint only when hover is actually available: */
 @media (hover: hover) {
 	abbr[title] {
