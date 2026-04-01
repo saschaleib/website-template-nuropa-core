@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+/* Stylesheet for Nuropa 2026
+ * Site-wide toolbar styles
+ * by Sascha Leib
+ * File name: __parts/tb-userconfig.css
+ */
+
+#nu__toolbar {
+
+	/* View popup specific styles */
+	#nu__tbView {
+		anchor-name: --nu-tbView-button;
+	}
+	#nu__tbView-dropdown {
+		& {
+			position-anchor: --nu-tbView-button;
+			box-sizing: border-box;
+			overflow: hidden;
+			max-width: 100%;
+		}
+		fieldset {
+			& {
+				border: transparent solid 1pt;
+				padding: 0;
+				margin: 1em 1.4em 1em .5em;
+				border-radius: .25em;
+			}
+			&:first-of-type {
+				margin-top: .5em;
+			}
+			&:last-of-type {
+				margin-bottom: 0.25em;
+			}
+			legend {
+				font-size: var(--nu-toolbar-fontsize);
+				color: var(--nu-toolbar-text);
+				padding: 0 .5em .5em .5em;
+			}
+			& > div.options-group {
+				& {
+					width: 100%;
+					height: 4em;
+					display: grid;
+					grid-template-columns: repeat(4, 1fr);
+					padding: .25em .5em .1em .5em;
+					border: transparent solid 1pt;
+					border-radius: 1em;
+					background-color: var(--nu-toolbar-highlight);
+				}
+				&:focus-within {
+					outline: 1pt solid var(--nu-toolbar-focus);
+					box-shadow: 0 0 2pt 2pt var(--nu-toolbar-focus);
+				}
+			}
+		}
+		label {
+			& {
+				height: 4em;
+			}
+			input[type="radio"]:focus {
+				outline: 0 none transparent;
+			}
+			/*&:focus-within {
+				outline: 1pt solid var(--nu-toolbar-focus);
+			}*/
+			svg {
+				width: 2.5em; height: 2.5em;
+				margin: 0 auto;
+			}
+			&.icon-panel {
+				display: inline-grid;
+				grid-template-rows: auto 2.75em 1.25em;
+				cursor: pointer;
+				color: var(--nu-toolbar-text);
+				text-align: center;
+				padding: .25em;
+				border-radius: 1em;
+				font-size: smaller;
+				white-space: nowrap;
+			}
+			&.icon-panel:has(input:checked) {
+				background: var(--nu-toolbar-background);
+			}
+			&:hover {
+				background: var(--nu-toolbar-highlight);
+			}
+		}
+	}
+
+}

@@ -2,17 +2,258 @@
 
 /* Stylesheet for Nuropa 2026
  * Site-wide toolbar styles
- * by Sascha Leib for GROW E.4
+ * by Sascha Leib
  * File name: __parts/toolbar.css
  */
 
-body > .global-toolbar {
+html[data-colorTheme="auto"] #nu__toolbar { /* auto mode */
+
+	@media (prefers-color-scheme: light) {
+		--nu-toolbar-background: var(--ini-toolbar-background-light);
+		--nu-toolbar-text: var(--ini-toolbar-text-light);
+		--nu-toolbar-icon: var(--ini-toolbar-icon-light);
+		--nu-toolbar-focus: var(--ini-toolbar-focus-light);
+		--nu-toolbar-border-top: color-mix(in lab, var(--nu-toolbar-background) 50%, var(--nu-background-color) 50%);
+		--nu-toolbar-border-bottom: color-mix(in lab, var(--nu-toolbar-background) 90%, #FFF 10%);
+		--nu-toolbar-highlight: color-mix(in lab, var(--nu-toolbar-background) 80%, #FFF 20%);
+		--nu-toolbar-shadow: 0.5pt 0.5pt 1pt 0 rgba(0,0,0,20%);
+	}
+	@media (prefers-color-scheme: dark) {
+		--nu-toolbar-background: var(--ini-toolbar-background-dark);
+		--nu-toolbar-text: var(--ini-toolbar-text-dark);
+		--nu-toolbar-icon: var(--ini-toolbar-icon-dark);
+		--nu-toolbar-focus: var(--ini-toolbar-focus-dark);
+		--nu-toolbar-border-top: color-mix(in lab, var(--nu-toolbar-background) 50%, var(--nu-background-color) 50%);
+		--nu-toolbar-border-bottom: color-mix(in lab, var(--nu-toolbar-background) 90%, #FFF 10%);
+		--nu-toolbar-highlight: color-mix(in lab, var(--nu-toolbar-background) 90%, #FFF 10%);
+		--nu-toolbar-shadow: 1pt 1pt 2pt 0 rgba(0,0,0,33%);
+	}
+	@media (prefers-color-scheme: high-contrast) {
+		--nu-toolbar-background: var(--ini-toolbar-background-hc);
+		--nu-toolbar-text: var(--ini-toolbar-text-hc);
+		--nu-toolbar-icon: var(--ini-toolbar-icon-hc);
+		--nu-toolbar-focus: var(--ini-toolbar-focus-hc);
+		--nu-toolbar-border-top: var(--ini-toolbar-background-hc);
+		--nu-toolbar-border-bottom: var(--ini-toolbar-background-hc);
+		--nu-toolbar-highlight: var(--ini-toolbar-background-hc);
+		--nu-toolbar-shadow: none
+	}
+}
+html[data-colorTheme="auto"] #nu__toolbar.inverted { /* auto mode inverted */
+
+	@media (prefers-color-scheme: light) {
+		--nu-toolbar-background: var(--ini-toolbar-background-dark);
+		--nu-toolbar-text: var(--ini-toolbar-text-dark);
+		--nu-toolbar-icon: var(--ini-toolbar-icon-dark);
+		--nu-toolbar-focus: var(--ini-toolbar-focus-dark);
+		--nu-toolbar-border-top: color-mix(in lab, var(--nu-toolbar-background) 50%, var(--nu-background-color) 50%);
+		--nu-toolbar-border-bottom: color-mix(in lab, var(--nu-toolbar-background) 90%, #FFF 10%);
+		--nu-toolbar-highlight: color-mix(in lab, var(--nu-toolbar-background) 90%, #FFF 10%);
+		--nu-toolbar-shadow: 1pt 1pt 2pt 0 rgba(0,0,0,33%);
+	}
+
+	@media (prefers-color-scheme: dark) {
+		--nu-toolbar-background: var(--ini-toolbar-background-light);
+		--nu-toolbar-text: var(--ini-toolbar-text-light);
+		--nu-toolbar-icon: var(--ini-toolbar-icon-light);
+		--nu-toolbar-focus: var(--ini-toolbar-focus-light);
+		--nu-toolbar-border-top: color-mix(in lab, var(--nu-toolbar-background) 50%, var(--nu-background-color) 50%);
+		--nu-toolbar-border-bottom: color-mix(in lab, var(--nu-toolbar-background) 90%, #FFF 10%);
+		--nu-toolbar-highlight: color-mix(in lab, var(--nu-toolbar-background) 80%, #FFF 20%);
+		--nu-toolbar-shadow: 0.5pt 0.5pt 1pt 0 rgba(0,0,0,20%);
+	}
+}
+
+html[data-colorTheme="light"] #nu__toolbar:not(.inverted),
+html[data-colorTheme="dark"] #nu__toolbar.inverted { /* light mode */
+	--nu-toolbar-background: var(--ini-toolbar-background-light);
+	--nu-toolbar-text: var(--ini-toolbar-text-light);
+	--nu-toolbar-icon: var(--ini-toolbar-icon-light);
+	--nu-toolbar-focus: var(--ini-toolbar-focus-light);
+	--nu-toolbar-border-top: color-mix(in lab, var(--nu-toolbar-background) 50%, var(--nu-background-color) 50%);
+	--nu-toolbar-border-bottom: color-mix(in lab, var(--nu-toolbar-background) 90%, #FFF 10%);
+	--nu-toolbar-highlight: color-mix(in lab, var(--nu-toolbar-background) 25%, #FFF 75%);
+	--nu-toolbar-shadow: 0.5pt 0.5pt 1pt 0 rgba(0,0,0,20%);
+}
+html[data-colorTheme="dark"] #nu__toolbar:not(.inverted),
+html[data-colorTheme="light"] #nu__toolbar.inverted { /* dark mode */
+		--nu-toolbar-background: var(--ini-toolbar-background-dark);
+		--nu-toolbar-text: var(--ini-toolbar-text-dark);
+		--nu-toolbar-icon: var(--ini-toolbar-icon-dark);
+		--nu-toolbar-focus: var(--ini-toolbar-focus-dark);
+		--nu-toolbar-border-top: color-mix(in lab, var(--nu-toolbar-background) 50%, var(--nu-background-color) 50%);
+		--nu-toolbar-border-bottom: color-mix(in lab, var(--nu-toolbar-background) 90%, #FFF 10%);
+		--nu-toolbar-highlight: color-mix(in lab, var(--nu-toolbar-background) 90%, #FFF 10%);
+		--nu-toolbar-shadow: 1pt 1pt 2pt 0 rgba(0,0,0,33%);
+}
+html[data-colorTheme="contrast"] #nu__toolbar { /* high contrast mode */
+	--nu-toolbar-background: var(--ini-toolbar-background-hc);
+	--nu-toolbar-text: var(--ini-toolbar-text-hc);
+	--nu-toolbar-icon: var(--ini-toolbar-icon-hc);
+	--nu-toolbar-focus: var(--ini-toolbar-focus-hc);
+	--nu-toolbar-border-top: color-mix(in lab, var(--nu-toolbar-background) 50%, var(--nu-background-color) 50%);
+	--nu-toolbar-border-bottom: color-mix(in lab, var(--nu-toolbar-background) 90%, #FFF 10%);
+	--nu-toolbar-highlight: color-mix(in lab, var(--nu-toolbar-background) 90%, #FFF 10%);
+	--nu-toolbar-shadow: none;
+}
+
+
+#nu__toolbar {
 	& {
+		/* other variables */
+		--nu-toolbar-fonts: system-ui, '-apple-system', 'Segoe UI', 'Helvetica Neue', Roboto, sans-serif;
+		--nu-toolbar-fontsize: 10pt;
+		--nu-toolbar-labels-breakpoint: 1400px; /* hide the labels except on very large screens */
+		--nu-toolbar-wide-breakpoint: 40rem;
+
 		background-color: var(--nu-toolbar-background);
 		color: var(--nu-toolbar-text);
 		font-family: var(--nu-toolbar-fonts);
 		font-size: var(--nu-toolbar-fontsize);
-		line-height: 1.5;
+		line-height: 1.25em;
 		border-bottom: var(--nu-toolbar-border) solid 1px;
+		margin: 0; padding: 0;
+		width: 100%;
+		border-top: solid 1px var(--nu-toolbar-border-top);
+		border-bottom: solid 1px var(--nu-toolbar-border-bottom);
+
+		/* layout */
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 1.5ch;
+
+		margin-bottom: 2em;
+		box-shadow: var(--nu-toolbar-shadow);
+
+	}
+	svg {
+		fill: var(--nu-toolbar-icon);
+		width: 1.25em; height: 1.25em;
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	p {
+		white-space: pre;
+		padding: .6em; margin: 0;
+	}
+	a, button {
+		&:focus {
+			outline: 1pt solid var(--nu-toolbar-focus);
+			box-shadow: 0 0 1pt 1pt var(--nu-toolbar-focus);
+		}
+	}
+
+	.inline-icon {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5ch;
+		white-space: pre;
+	}
+
+	.tbGroup {
+		& {
+			display: flex;
+			gap: .25em;
+			overflow: hidden
+		}
+		&.left {
+			width: max-content;
+			overflow: visible;
+		}
+		& > span {
+			white-space: nowrap;
+			width: max-content;
+		}
+
+	}
+
+	.narrow-only {
+		display: none;
+	}
+
+	/* popover menus */
+
+	[popovertarget] {
+		.align-right {
+			left: anchor(right);
+			top: anchor(bottom);
+		}
+		.align-left {
+			left: anchor(left);
+			top: anchor(bottom);
+		}
+		&::after {
+			content: '\25be'; /* ▼ */
+			color: var(--nu-toolbar-text);
+			font-size: calc(0.5em + 4px);
+			vertical-align: baseline;
+			position: relative; 
+			top: calc(0.42em - 1.66px); 
+			margin: 0 0 0 0.125em;
+		}
+	}
+
+	[popover] {
+		& {
+			z-index: 100;
+			display: none;
+			position: absolute;
+			position-area: bottom;
+			top: .5rem;
+			background-color: var(--nu-toolbar-background);
+			border: solid 1px var(--nu-toolbar-border);
+			width: max-content;
+			max-width: 100vw;
+			transition:
+				opacity 300ms,
+				display 300ms allow-discrete,
+				overlay 500ms allow-discrete;
+			color: var(--nu-toolbar-text);
+			border-radius: 1.1em;
+			box-shadow: var(--nu-toolbar-shadow);
+		}
+		&:popover-open {
+			display: block;
+			opacity: 1;
+
+			@starting-style {
+				opacity: 0;
+			}
+		}
+	}
+
+	a:link, a:visited, button {
+		color: var(--nu-toolbar-text);
+		text-decoration: none;
+		padding: .4em .6em;
+		border-radius: .4em;
+		margin: .25em;
+		white-space: pre;
+	}
+	a:hover, button:hover {
+		background: var(--nu-toolbar-highlight);
+	}
+
+}
+
+@media (max-width: 40em) {
+	#nu__toolbar {
+
+		.wide-only {
+			display: none;
+		}
+		.narrow-only {
+			display: initial;
+		}
+	}
+}
+
+@media (max-width: 1200px) {
+	#nu__toolbar .tbGroup .inline-icon span.uw-only {
+		display: none;
 	}
 }

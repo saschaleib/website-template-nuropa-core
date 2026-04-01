@@ -2,7 +2,7 @@
 
 /* Stylesheet for Nuropa 2026
  * General styles and variables setup
- * by Sascha Leib for GROW E.4
+ * by Sascha Leib
  * File name: __parts/general.css
  */
 
@@ -14,22 +14,19 @@
 	--nu-headline-fonts: Bahnschrift, "DIN Alternate", "Arial Bold", sans-serif;
 	
 	/* colours */
+	@media (prefers-color-scheme: light) {
 	--nu-background-color: #FFF;
-	--nu-background-color-dark: #181816;
 	--nu-text-color: #00002E;
-	--nu-text-color-dark: #ADADAD;
 	--nu-focus-color: #F39811;
-	--nu-focus-color-dark: #F39811;
 	--nu-link-color: #3860ED;
-	--nu-link-color-dark: #7F85F5;
-	--nu-toolbar-background: #EEE;
-	--nu-toolbar-background-dark: #000;
-	--nu-toolbar-text: #000;
-	--nu-toolbar-text-dark: #EEE;
-	--nu-toolbar-border: #D4D4D4;
-	--nu-toolbar-border-dark: #d4d4d4;
-	--nu-toolbar-fonts: system-ui, '-apple-system', 'Segoe UI', 'Helvetica Neue', Roboto, sans-serif;
-	--nu-toolbar-fontsize: 1rem;
+	}
+
+	@media (prefers-color-scheme: dark) {
+	--nu-background-color: #323231;
+	--nu-text-color: #ADADAD;
+	--nu-focus-color: #F39811;
+	--nu-link-color: #7F85F5;
+	}
 
 	/* sizes */
 	--nu-content-width-desktop: 81.5rem;
@@ -40,7 +37,6 @@
 :root {
 	font-family: var(--nu-text-fonts);
 	line-height: 1.15;
-	font-size: 16px;
 }
 
 * {
@@ -53,11 +49,13 @@ body {
 	overflow-y: auto;
 	scroll-behavior: smooth;
 	background-color: var(--nu-background-color);
+	color: var(--nu-text-color);
 }
 
 /* global focus outline: */
 a:focus, input:focus, button:focus {
-	outline: 2px solid var(--nu-focus-color);
+	outline: 1pt solid var(--nu-focus-color);
+	outline-offset: 1px;
 }
 
 /* accessibility fixes */
@@ -88,7 +86,7 @@ a:hover {
 	color: var(--nu-link-color);
 }
 a:focus {
-	outline: 2pt solid var(--nu-focus-color);
+	outline: 1pt solid var(--nu-focus-color);
 	text-decoration: none;
 }
 
@@ -99,4 +97,18 @@ a:focus {
 		text-decoration-style: dashed;
 		text-decoration-color: color-mix(in lab, currentColor 50%, var(--nu-background-color) 50%);
 	}
+}
+
+/* reset form elements */
+input, button, select, textarea {
+	appearance: none;
+	border: 0 none;
+	background: none;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: 1.25em;
+	color: inherit;
+}
+button, input[type=radio], input[type=checkbox] {
+	cursor: pointer;
 }

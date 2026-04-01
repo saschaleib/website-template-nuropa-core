@@ -1,0 +1,45 @@
+/* Stylesheet for Nuropa 2026
+ * General styles and variables setup
+ * by Sascha Leib
+ * File name: __parts/variables.css
+ */
+
+/* high-level variables */
+:root {
+
+    /* Default ("must have") variables */
+    --ini_background:  #fff;
+    --ini_background_alt:  #eee;
+    --ini_background_neu:  #ddd;
+    --ini_border:  #ccc;
+    --ini_text:  #333;
+    --ini_text_alt:  #999;
+    --ini_text_neu: #666;
+    --ini_highlight :  #ff9;
+    --ini_link:  #2b73b7;
+
+    /* default template variables */
+    --ini_background_site:  #fbfaf9;
+    --ini_existing: #080;
+    --ini_missing: #d30;
+    --ini_site_width: 75em ;
+    --ini_sidebar_width: 16em;
+    --ini_tablet_width: 800px;
+    --ini_phone_width: 480px;
+    --ini_theme_color: #008800;
+
+    /* toolbar colors */
+    --ini-toolbar-background-light: #F6F5F4;
+    --ini-toolbar-background-dark: #2A2A2A;
+    --ini-toolbar-background-hc: #000;
+    --ini-toolbar-text-light: #2E3436;
+    --ini-toolbar-text-dark: #FFF;
+    --ini-toolbar-text-hc: #FFF;
+    --ini-toolbar-icon-light: #414749;
+    --ini-toolbar-icon-dark: #BBB;
+    --ini-toolbar-icon-hc: #FF0;
+    --ini-toolbar-focus-light: #3584E4;
+    --ini-toolbar-focus-dark: #3584E4;
+    --ini-toolbar-focus-hc: #F00;
+
+}

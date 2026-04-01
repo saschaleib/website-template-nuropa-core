@@ -2,9 +2,23 @@
 
 /* Stylesheet for Nuropa 2026
  * Layout styles
- * by Sascha Leib for GROW E.4
+ * by Sascha Leib
  * File name: __parts/layout.css
  */
+
+/* font size user preferences */
+html { /* default font size (= medium) */
+	font-size: 16px; /* Base REM size */
+}
+html[data-textSize="small"] { /* small font size */
+	font-size: 13px; /* Base REM size */
+}
+html[data-textSize="large"] { /* large font size */
+	font-size: 24px; /* Base REM size */
+}
+html[data-textSize="xlarge"] { /* extra large font size */
+	font-size: 32px; /* Base REM size */
+}
 
 /* Accessibility skip link widget */
 #nu__skiplink {
@@ -34,7 +48,7 @@
 		border-color: var(--nu-link-color);
 		height: auto;
 		overflow: visible;
-		clip: none;
+		clip: initial;
 		clip-path: none;
 	}
 }
