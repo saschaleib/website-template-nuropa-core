@@ -6,28 +6,38 @@
  * File name: __parts/general.css
  */
 
+/* Colour theme settings */
+html[data-colorTheme="auto"] body { /* auto mode */
+
+	@media (prefers-color-scheme: light) {
+		background-color: var(--ini_background);
+		color: var(--ini_text);
+	}
+	@media (prefers-color-scheme: dark) {
+		background-color: var(--ini_background_dark);
+		color: var(--ini_text_dark);
+	}
+	@media (prefers-color-scheme: high-contrast) {
+		background-color: var(--ini_background_hc);
+		color: var(--ini_text_hc);
+	}
+}
+html[data-colorTheme="light"] body { /* light mode */
+	background-color: var(--ini_background);
+	color: var(--ini_text);
+}
+html[data-colorTheme="dark"] { /* dark mode */
+	background-color: var(--ini_background_dark);
+	color: var(--ini_text_dark);
+}
+html[data-colorTheme="contrast"] #nu__toolbar { /* high contrast mode */
+	background-color: var(--ini_background_hc);
+	color: var(--ini_text_hc);
+}
+
 /* general variables */
 :root {
 	
-	/* fonts */
-	--nu-text-fonts: arial, helvetica, sans-serif;
-	--nu-headline-fonts: Bahnschrift, "DIN Alternate", "Arial Bold", sans-serif;
-	
-	/* colours */
-	@media (prefers-color-scheme: light) {
-	--nu-background-color: #FFF;
-	--nu-text-color: #00002E;
-	--nu-focus-color: #F39811;
-	--nu-link-color: #3860ED;
-	}
-
-	@media (prefers-color-scheme: dark) {
-	--nu-background-color: #323231;
-	--nu-text-color: #ADADAD;
-	--nu-focus-color: #F39811;
-	--nu-link-color: #7F85F5;
-	}
-
 	/* sizes */
 	--nu-content-width-desktop: 81.5rem;
 	--nu-sidebar-width-desktop: 17rem;
@@ -48,8 +58,6 @@ body {
 	overflow-x: hidden;
 	overflow-y: auto;
 	scroll-behavior: smooth;
-	background-color: var(--nu-background-color);
-	color: var(--nu-text-color);
 }
 
 /* global focus outline: */

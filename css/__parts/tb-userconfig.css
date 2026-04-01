@@ -33,8 +33,8 @@
 				margin-bottom: 0.25em;
 			}
 			legend {
-				font-size: var(--nu-toolbar-fontsize);
-				color: var(--nu-toolbar-text);
+				font-size: var(--nu_toolbar_fontsize);
+				color: var(--nu_toolbar_text);
 				padding: 0 .5em .5em .5em;
 			}
 			& > div.options-group {
@@ -46,11 +46,11 @@
 					padding: .25em .5em .1em .5em;
 					border: transparent solid 1pt;
 					border-radius: 1em;
-					background-color: var(--nu-toolbar-highlight);
+					background-color: var(--nu_toolbar_alt);
 				}
 				&:focus-within {
-					outline: 1pt solid var(--nu-toolbar-focus);
-					box-shadow: 0 0 2pt 2pt var(--nu-toolbar-focus);
+					outline: 1pt solid var(--nu_toolbar_focus);
+					box-shadow: 0 0 2pt 2pt var(--nu_toolbar_focus);
 				}
 			}
 		}
@@ -62,7 +62,7 @@
 				outline: 0 none transparent;
 			}
 			/*&:focus-within {
-				outline: 1pt solid var(--nu-toolbar-focus);
+				outline: 1pt solid var(--nu_toolbar_focus);
 			}*/
 			svg {
 				width: 2.5em; height: 2.5em;
@@ -72,18 +72,26 @@
 				display: inline-grid;
 				grid-template-rows: auto 2.75em 1.25em;
 				cursor: pointer;
-				color: var(--nu-toolbar-text);
+				color: var(--nu_toolbar_text);
 				text-align: center;
 				padding: .25em;
 				border-radius: 1em;
 				font-size: smaller;
 				white-space: nowrap;
 			}
+            &.icon-panel.double-width {
+                & {
+                    grid-column-end: span 2;
+                }
+                svg {
+                    width: 5em;
+                }
+            }
 			&.icon-panel:has(input:checked) {
-				background: var(--nu-toolbar-background);
+				background: var(--nu_toolbar_background);
 			}
 			&:hover {
-				background: var(--nu-toolbar-highlight);
+				background: var(--nu_toolbar_alt);
 			}
 		}
 	}

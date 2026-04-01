@@ -6,7 +6,7 @@
  * File name: __parts/layout.css
  */
 
-/* font size user preferences */
+/* font size user settings */
 html { /* default font size (= medium) */
 	font-size: 16px; /* Base REM size */
 }
@@ -18,6 +18,28 @@ html[data-textSize="large"] { /* large font size */
 }
 html[data-textSize="xlarge"] { /* extra large font size */
 	font-size: 32px; /* Base REM size */
+}
+
+/* layout width user settings */
+html { /* default font size (= medium) */
+	body > header, body > footer, body > .main-layout {
+		& {
+			width: 100vw;
+		}
+		& > * {
+			width: calc(var(--nu-content-width-desktop) - 4rem);
+			margin: 0 auto;
+			padding: 0 2rem;
+		}
+	}
+	&[data-layout="wide"] { /* default font size (= medium) */
+		body > header, body > footer, body > .main-layout {
+			& > * {
+				width: 100%;
+				margin: 0;
+			}
+		}
+	}
 }
 
 /* Accessibility skip link widget */
@@ -61,19 +83,6 @@ body > .global-toolbar {
 }
 
 /* layout items */
-body > header, body > footer, body > .main-layout {
-	& {
-		width: 100vw;
-	}
-	& > * {
-		width: calc(var(--nu-content-width-desktop) - 4rem);
-		max-width: 100vw;
-		margin: 0 auto;
-		overflow: hidden;
-		padding: 0 2rem;
-		box-sizing: border-box;
-	}
-}
 body > header > .header-layout {
 	padding: 2rem 2rem 1.5rem 2rem;
 	border: pink dashed 1px;

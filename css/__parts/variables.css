@@ -7,12 +7,22 @@
 /* high-level variables */
 :root {
 
-    /* Default ("must have") variables */
+    /* Default ("must have") variables + dark, high-contrast variants */
     --ini_background:  #fff;
+    --ini_background_dark:  #191919FF;
+    --ini_background_hc:  #000;
+
     --ini_background_alt:  #eee;
+    --ini_background_alt_dark:  #222;
+    --ini_background_alt_hc:  #444;
+
     --ini_background_neu:  #ddd;
     --ini_border:  #ccc;
-    --ini_text:  #333;
+
+    --ini_text: #333;
+    --ini_text_dark:  #191919FF;
+    --ini_text_hc:  #FFF;
+
     --ini_text_alt:  #999;
     --ini_text_neu: #666;
     --ini_highlight :  #ff9;
@@ -29,17 +39,21 @@
     --ini_theme_color: #008800;
 
     /* toolbar colors */
-    --ini-toolbar-background-light: #F6F5F4;
-    --ini-toolbar-background-dark: #2A2A2A;
-    --ini-toolbar-background-hc: #000;
-    --ini-toolbar-text-light: #2E3436;
-    --ini-toolbar-text-dark: #FFF;
-    --ini-toolbar-text-hc: #FFF;
-    --ini-toolbar-icon-light: #414749;
-    --ini-toolbar-icon-dark: #BBB;
-    --ini-toolbar-icon-hc: #FF0;
-    --ini-toolbar-focus-light: #3584E4;
-    --ini-toolbar-focus-dark: #3584E4;
-    --ini-toolbar-focus-hc: #F00;
+    --ini_toolbar_background_light: #F6F5F4;
+    --ini_toolbar_background_dark: #2A2A2A;
+    --ini_toolbar_background_hc: #000;
+    --ini_toolbar_text_light: #2E3436;
+    --ini_toolbar_text_dark: #FFF;
+    --ini_toolbar_text_hc: #FFF;
+    --ini_toolbar_icon_light: #414749;
+    --ini_toolbar_icon_dark: #BBB;
+    --ini_toolbar_icon_hc: #FF0;
+    --ini_toolbar_focus_light: #3584E4;
+    --ini_toolbar_focus_dark: #3584E4;
+    --ini_toolbar_focus_hc: #F00;
+
+	/* fonts */
+	--nu-text-fonts: arial, helvetica, sans-serif;
+	--nu-headline-fonts: Bahnschrift, "DIN Alternate", "Arial Bold", sans-serif;
 
 }
