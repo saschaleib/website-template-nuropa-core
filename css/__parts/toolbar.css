@@ -6,6 +6,7 @@
  * File name: __parts/toolbar.css
  */
 
+/* colour theming */
 html[data-colorTheme="auto"] #nu__toolbar { /* auto mode */
 
 	@media (prefers-color-scheme: light) {
@@ -15,7 +16,7 @@ html[data-colorTheme="auto"] #nu__toolbar { /* auto mode */
 		--nu_toolbar_focus: var(--ini_toolbar_focus_light);
 		--nu_toolbar_border_top: color-mix(in lab, var(--nu_toolbar_background) 50%, var(--nu_background_color) 50%);
 		--nu_toolbar_border_bottom: color-mix(in lab, var(--nu_toolbar_background) 90%, #FFF 10%);
-		--nu_toolbar_alt: var(--ini_background_alt);
+		--nu_toolbar_alt: color-mix(in lab, var(--nu_toolbar_background) 90%, #000 10%);
 		--nu_toolbar_shadow: 0.5pt 0.5pt 1pt 0 rgba(0,0,0,20%);
 	}
 	@media (prefers-color-scheme: dark) {
@@ -28,14 +29,14 @@ html[data-colorTheme="auto"] #nu__toolbar { /* auto mode */
 		--nu_toolbar_alt: var(--ini_background_alt_dark);
 		--nu_toolbar_shadow: 1pt 1pt 2pt 0 rgba(0,0,0,33%);
 	}
-	@media (prefers-color-scheme: high-contrast) {
+	@media (prefers-contrast: more) {
 		--nu_toolbar_background: var(--ini_toolbar_background_hc);
 		--nu_toolbar_text: var(--ini_toolbar_text_hc);
 		--nu_toolbar_icon: var(--ini_toolbar_icon_hc);
 		--nu_toolbar_focus: var(--ini_toolbar_focus_hc);
 		--nu_toolbar_border_top: var(--ini_toolbar_border_top_hc);
 		--nu_toolbar_border_bottom: var(--ini_toolbar_icon_hc);
-		--nu_toolbar_alt: var(--ini_background_alt_hc);
+		--nu_toolbar_alt: color-mix(in lab, var(--ini_toolbar_background_hc) 80%, #FFF 20%);
 		--nu_toolbar_shadow: none;
 	}
 }
@@ -59,11 +60,10 @@ html[data-colorTheme="auto"] #nu__toolbar.inverted { /* auto mode inverted */
 		--nu_toolbar_focus: var(--ini_toolbar_focus_light);
 		--nu_toolbar_border_top: color-mix(in lab, var(--nu_toolbar_background) 50%, var(--nu_background_color) 50%);
 		--nu_toolbar_border_bottom: color-mix(in lab, var(--nu_toolbar_background) 90%, #FFF 10%);
-		--nu_toolbar_alt: var(--ini_background_alt);
+		--nu_toolbar_alt: color-mix(in lab, var(--nu_toolbar_background) 90%, #000 10%);
 		--nu_toolbar_shadow: 0.5pt 0.5pt 1pt 0 rgba(0,0,0,20%);
 	}
 }
-
 html[data-colorTheme="light"] #nu__toolbar:not(.inverted),
 html[data-colorTheme="dark"] #nu__toolbar.inverted { /* light mode */
 	--nu_toolbar_background: var(--ini_toolbar_background_light);
@@ -72,7 +72,7 @@ html[data-colorTheme="dark"] #nu__toolbar.inverted { /* light mode */
 	--nu_toolbar_focus: var(--ini_toolbar_focus_light);
 	--nu_toolbar_border_top: color-mix(in lab, var(--nu_toolbar_background) 50%, var(--nu_background_color) 50%);
 	--nu_toolbar_border_bottom: color-mix(in lab, var(--nu_toolbar_background) 90%, #FFF 10%);
-	--nu_toolbar_alt: var(--ini_background_alt);
+	--nu_toolbar_alt: color-mix(in lab, var(--nu_toolbar_background) 90%, #000 10%);
 	--nu_toolbar_shadow: 0.5pt 0.5pt 1pt 0 rgba(0,0,0,20%);
 }
 html[data-colorTheme="dark"] #nu__toolbar:not(.inverted),
@@ -83,7 +83,7 @@ html[data-colorTheme="light"] #nu__toolbar.inverted { /* dark mode */
 	--nu_toolbar_focus: var(--ini_toolbar_focus_dark);
 	--nu_toolbar_border_top: color-mix(in lab, var(--nu_toolbar_background) 50%, var(--nu_background_color) 50%);
 	--nu_toolbar_border_bottom: color-mix(in lab, var(--nu_toolbar_background) 90%, #FFF 10%);
-	--nu_toolbar_alt: var(--ini_background_alt_dark);
+	--nu_toolbar_alt: color-mix(in lab, var(--ini_toolbar_background_dark) 90%, #FFF 10%);
 	--nu_toolbar_shadow: 1pt 1pt 2pt 0 rgba(0,0,0,33%);
 }
 html[data-colorTheme="contrast"] #nu__toolbar { /* high contrast mode */
@@ -93,10 +93,11 @@ html[data-colorTheme="contrast"] #nu__toolbar { /* high contrast mode */
 	--nu_toolbar_focus: var(--ini_toolbar_focus_hc);
 	--nu_toolbar_border_top: var(--ini_toolbar_border_top_hc);
 	--nu_toolbar_border_bottom: var(--ini_toolbar_icon_hc);
-	--nu_toolbar_alt: var(--ini_background_alt_hc);
+	--nu_toolbar_alt: color-mix(in lab, var(--ini_toolbar_background_hc) 80%, #FFF 20%);
 	--nu_toolbar_shadow: none;
 }
 
+/* toolbar element */
 #nu__toolbar {
 	& {
 		/* other variables */
@@ -117,6 +118,8 @@ html[data-colorTheme="contrast"] #nu__toolbar { /* high contrast mode */
 		border-bottom: solid 1px var(--nu_toolbar_border_bottom);
 
 		/* layout */
+		contain: layout paint style;
+		contain-intrinsic-width: 100vh;
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;

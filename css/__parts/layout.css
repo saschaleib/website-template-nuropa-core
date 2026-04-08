@@ -25,9 +25,11 @@ html { /* default font size (= medium) */
 	body > header, body > footer, body > .main-layout {
 		& {
 			width: 100vw;
+			contain: layout paint style;
 		}
 		& > * {
-			width: calc(var(--nu-content-width-desktop) - 4rem);
+			width: 100%;
+			max-width: calc(var(--nu-content-width-desktop) - 4rem);
 			margin: 0 auto;
 			padding: 0 2rem;
 		}
@@ -75,19 +77,7 @@ html { /* default font size (= medium) */
 	}
 }
 
-/* global toolbar */
-body > .global-toolbar {
-	width: 100%;
-	margin: 0;
-	padding: 1px 1rem;
-}
-
-/* layout items */
-body > header > .header-layout {
-	padding: 2rem 2rem 1.5rem 2rem;
-	border: pink dashed 1px;
-}
-
+/* to be moved to separate files: */
 body > .main-layout {
 	& {
 		border: red dashed 1px;
@@ -149,9 +139,6 @@ body > footer > .footer-layout {
 			width: calc(var(--nu-content-width-desktop) - 3rem);
 			padding: 0 .5rem;
 		}
-	}
-	body > header > .header-layout {
-		padding: 2rem .5rem 1.5rem .5rem;
 	}
 
 	body > .main-layout {

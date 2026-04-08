@@ -25,7 +25,7 @@ $p.gui.toolbar = {
             // find the userOptions popover:
             const popover = document.getElementById('nu__tbView-dropdown');
             if (popover) {
-               popover.showPopover(); // DEBUG ONLY!
+               //popover.showPopover(); // DEBUG ONLY!
 
                 // find the radio buttons and attach event listeners:
                 const radios = popover.querySelectorAll('input[type="radio"]');

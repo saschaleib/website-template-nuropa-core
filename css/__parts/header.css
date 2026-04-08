@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+/* Stylesheet for Nuropa 2026
+ * Site-wide toolbar styles
+ * by Sascha Leib
+ * File name: __parts/header.css
+ */
+
+#nu__searchbar {
+ 	& {
+        padding: 2rem 2rem 1.5rem 2rem;
+        margin: 0 auto;
+        padding: .5rem .25rem;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        place-items: center;
+        column-gap: 1.5rem;
+
+       	background-color: #FFF;
+	    color: #000;
+        border: pink dashed 1px;
+    }
+    #nu__sitelogo {
+        & {
+            justify-self: start;
+            width: 100%;
+            max-width: 10rem;
+        }
+        a:link, a:visited {
+            border-radius: 2pt;
+        }
+        img {
+            width: 100%;
+            display: block;
+        }
+       
+    }
+}

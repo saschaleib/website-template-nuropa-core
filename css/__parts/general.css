@@ -17,7 +17,7 @@ html[data-colorTheme="auto"] body { /* auto mode */
 		background-color: var(--ini_background_dark);
 		color: var(--ini_text_dark);
 	}
-	@media (prefers-color-scheme: high-contrast) {
+	@media (prefers-contrast: more) {
 		background-color: var(--ini_background_hc);
 		color: var(--ini_text_hc);
 	}
